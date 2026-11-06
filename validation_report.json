@@ -1,0 +1,21 @@
+{
+  "tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "status": "passed",
+  "python": "3.13.16",
+  "isolation": "separate_uid_seccomp_no_network_resource_limits_not_container",
+  "source_sha256": {
+    "main.py": "f7ffffb2b4c6a24fdfb43d6965c66cf26e3bbede1411fae2174bd33c81136d44",
+    "test_contract.py": "a01b4c343204cec27ce4a9d92bf2a030be1432f03279d697b4027a945d9b6540",
+    "requirements.txt": "93f90b4e0fc7e26142a425f53807caeb9c4489a3bc984b264583aae959cc9205",
+    ".gitignore": "95e5b9881836504ef66f4e94b5cec34cb1a72758153dc28844d1bbe167b32a0f",
+    "data.py": "0f23409a88eab3bf9d3ce0b00be32cf72c86a5fdd0a30453b9502290f4a5d71c",
+    "app.py": "0fa3ed555df6e3f48a8f750bed9bf255ac4887648b7b5c89fd64f622f10a0d5e",
+    "test_project.py": "9f298173a579233c86c7bd6385f9328cf5c0a37d569846fe79e4e19f2aafbae1"
+  },
+  "test_output": "............                                                             [100%]\n-------- generated xml file: /tmp/qwen-check-vkwda2me/output/junit.xml ---------\n12 passed in 0.16s\n",
+  "demo_output": "{\n  \"n_samples\": 256,\n  \"metrics\": {\n    \"precision\": 0.3333333333333333,\n    \"recall\": 1.0,\n    \"f1\": 0.5\n  },\n  \"baseline_metrics\": {\n    \"precision\": 1.0,\n    \"recall\": 1.0,\n    \"f1\": 1.0\n  },\n  \"explanation\": \"Chronological 75/25 train/test split (no shuffling). Algorithm: linear trend + FFT-based sinusoidal seasonal fit on train, MAD threshold (3 * 1.4826 * MAD) on train residuals. Baseline: centered 7-point moving average, 3*std threshold on train deviations. Metrics computed on test split only.\"\n}\n",
+  "seed": 42
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "seasonal-mad-anomaly-detection",
+  "title": "Seasonal MAD Anomaly Detection in Synthetic Time Series",
+  "description": "Detects injected anomalies in a synthetic seasonal time series via seasonal decomposition with MAD thresholding, compared to a moving-average baseline, reporting precision, recall, and F1 on a chronological test split.",
+  "novelty": "Unlike the TF-IDF retrieval project, this operates on a 1-D temporal signal: it fits a linear trend and dominant sinusoidal component via FFT, uses robust MAD thresholding for anomaly flagging, and compares against a fixed-window moving-average detector. Validation uses a chronological split with no shuffling and no shuffling of the temporal order.",
+  "method": "Algorithm: fit linear trend (np.polyfit) and sinusoidal seasonal (FFT peak frequency + least-squares on sin/cos basis) on the first 75% of the series; flag test points where |residual| > 3 * 1.4826 * MAD of train residuals. Baseline: centered 7-point moving average; flag test points where |deviation from MA| > 3 * std of train deviations. Both thresholds use train-only statistics to prevent leakage. Metrics: precision, recall, F1 (higher is better, range [0,1]) computed on the last 25% of points only.",
+  "dependencies": [
+    "numpy"
+  ],
+  "acceptance_tests": [
+    "make_dataset raises ValueError when n_samples is less than 32",
+    "run_experiment returns exactly the same dict for repeated calls with identical seed and n_samples",
+    "All metric values (precision, recall, F1) for both algorithm and baseline are finite real numbers within the closed interval [0, 1]"
+  ]
+}

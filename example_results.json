@@ -1,0 +1,14 @@
+{
+  "n_samples": 256,
+  "metrics": {
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "f1": 0.5
+  },
+  "baseline_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "explanation": "Chronological 75/25 train/test split (no shuffling). Algorithm: linear trend + FFT-based sinusoidal seasonal fit on train, MAD threshold (3 * 1.4826 * MAD) on train residuals. Baseline: centered 7-point moving average, 3*std threshold on train deviations. Metrics computed on test split only."
+}

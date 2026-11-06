@@ -1,0 +1,10 @@
+{
+  "generator": "project-bundle-v2",
+  "status": "validated",
+  "date": "2026-11-06",
+  "slug": "seasonal-mad-anomaly-detection",
+  "description": "Detects injected anomalies in a synthetic seasonal time series via seasonal decomposition with MAD thresholding, compared to a moving-average baseline, reporting precision, recall, and F1 on a chronological test split.",
+  "method": "Algorithm: fit linear trend (np.polyfit) and sinusoidal seasonal (FFT peak frequency + least-squares on sin/cos basis) on the first 75% of the series; flag test points where |residual| > 3 * 1.4826 * MAD of train residuals. Baseline: centered 7-point moving average; flag test points where |deviation from MA| > 3 * std of train deviations. Both thresholds use train-only statistics to prevent leakage. Metrics: precision, recall, F1 (higher is better, range [0,1]) computed on the last 25% of points only.",
+  "category": "Advanced data analysis and machine learning: time series or small image arrays",
+  "bundle_sha256": "95bc1d5cd3125b2c70993f6f194b4a24cd1ff0acfbdb74df7b40bec7410f5cdf"
+}
